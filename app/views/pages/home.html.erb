@@ -1,6 +1,7 @@
 <h1>Estamos na home.</h1>
 
 <% if user_signed_in? %>
+
 	Olá, <%= current_user.email %><br>
 	<hr>
 	<h2>Seus tweets</h2>
@@ -15,9 +16,14 @@
 		<li><%= tweet.content %></li>
 	<% end %>
 	</ul>
+	<hr>
+
 	<br>
 	<%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+
 <% else %>
+
 	<%= link_to 'Clique aqui para logar', new_user_session_path %><br>
 	<!--<%= link_to 'Clique aqui criar usuário', new_user_registration_path %>-->
+
 <% end %>
